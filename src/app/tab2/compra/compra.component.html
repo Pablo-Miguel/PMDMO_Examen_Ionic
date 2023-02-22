@@ -1,0 +1,14 @@
+<ion-item>
+  <ion-label position="stacked">{{compra.getProducto().getNombre()}}</ion-label>
+  <ion-label position="stacked">{{compra.getProducto().getPrecio()}}€</ion-label>
+  <ion-label position="stacked">Cantidad</ion-label>
+  <ion-input type="number" [value]="compra.getCantidad()" min="1" #input_catidad></ion-input>
+  <ion-button slot="end" (click)="onModificar(input_catidad.value)">
+    <ion-icon name="create"></ion-icon>
+    Modificar
+  </ion-button>
+  <ion-button slot="end" (click)="onBorrar()">
+    <ion-icon name="trash"></ion-icon>
+    Borrar
+  </ion-button>
+</ion-item>

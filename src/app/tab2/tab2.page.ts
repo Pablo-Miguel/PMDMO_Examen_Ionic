@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Compra } from '../models/compra';
+import { CarritoService } from '../services/carrito_service/carrito.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  compras!: Compra[];
+
+  constructor(private carritoService: CarritoService) {
+    carritoService.getCompras$().subscribe(compras => {
+      this.compras = compras;
+    });
+  }
 
 }

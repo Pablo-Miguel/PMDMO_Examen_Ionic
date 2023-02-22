@@ -1,0 +1,8 @@
+<ion-item>
+  <ion-label position="stacked">{{producto.getNombre()}}</ion-label>
+  <ion-label position="stacked">{{producto.getPrecio()}}€</ion-label>
+  <ion-button slot="end" (click)="onComprar()">
+    <ion-icon name="cart"></ion-icon>
+    Comprar
+  </ion-button>
+</ion-item>
